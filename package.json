@@ -1,0 +1,46 @@
+{
+  "name": "glofy-deals",
+  "version": "1.0.0",
+  "description": "Implementación de un servicio backend simple que procese datos de ventas y calcule comisiones para representantes de ventas.",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "start:dist": "node dist/src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck": "tsc --noEmit",
+    "import-deals": "tsx src/scripts/import-deals.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdaniotti/glofy-deals.git"
+  },
+  "author": "Martin Daniotti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdaniotti/glofy-deals/issues"
+  },
+  "homepage": "https://github.com/mdaniotti/glofy-deals#readme",
+  "dependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "better-sqlite3": "^12.2.0",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "helmet": "^8.0.0",
+    "morgan": "^1.10.0",
+    "tsx": "^4.20.3",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.20",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.7.5",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
