@@ -11,6 +11,10 @@ API REST que permite:
 - Consultar información de deals y comisiones
 - Gestionar el estado de las ventas
 
+## Enlaces a la grabación de pantalla
+https://www.loom.com/share/a094a05f849f4754874af4c6205f73ee?sid=c4469ece-cc18-485c-95c0-86773b91195b
+https://www.loom.com/share/027b67f2a04e4691bbd1e45cd3480665?sid=46e09056-3ef7-44f2-8139-3b2ee63da1d4
+
 ## 🚀 Instalación
 
 ```bash
