@@ -38,14 +38,14 @@ npm run import-deals data/deals.csv
 
 ### Deals
 
-- `GET /api/v1/deals` - Listar todos los deals
-- `GET /api/v1/deals/:id` - Obtener deal específico
+- `POST /api/v1/deals` - Crear un nuevo deal
 
 ### Comisiones
 
-- `GET /api/v1/commissions` - Listar comisiones
-- `GET /api/v1/commissions/:rep` - Comisiones por representante
-- `POST /api/v1/commissions/calculate` - Calcular comisiones
+- `GET /api/v1/commissions` - Listar todas las comisiones
+- `GET /api/v1/commissions/deals/:deal_id` - Listar todas las comisiones por deal
+- `GET /api/v1/commissions/reps/:rep?commissionDate=` - Comisiones por representante, con posibilidad de obtener por fecha
+- `POST /api/v1/commissions/total/:month?year=` - Calcular el total de comisiones de un mes especifico de un determindo año
 
 ## 🗂️ Estructura del Proyecto
 
