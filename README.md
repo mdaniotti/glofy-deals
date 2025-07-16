@@ -23,42 +23,18 @@ npm install
 
 # Configurar variables de entorno (opcional)
 cp .env.example .env
+
+PORT=
+NODE_ENV=
 ```
-
-## 🛠️ Uso
-
-### Desarrollo
-
-```bash
-# Ejecutar en modo desarrollo con hot reload
-npm run dev
-
-# Verificar tipos TypeScript
-npm run typecheck
-```
-
-### Producción
-
-```bash
-# Compilar TypeScript
-npm run build
-
-# Ejecutar versión compilada
-npm run start:dist
-```
-
 ### Importar datos
 
 ```bash
 # Importar deals desde CSV
-npm run import-deals
+npm run import-deals data/deals.csv
 ```
 
 ## 📊 Endpoints
-
-### Health Check
-
-- `GET /` - Estado del servicio
 
 ### Deals
 
@@ -97,27 +73,19 @@ glofy-deals/
 - **Seguridad**: Helmet, CORS
 - **Logging**: Morgan
 
-## 📈 Datos de Ejemplo
-
-El proyecto incluye datos de ejemplo con:
-
-- 50 deals de ventas
-- 5 representantes de ventas
-- 6 modelos de autos diferentes
-- Estados: completed, cancelled, in process
-
 ## 🔧 Decisiones Técnicas
 
-<!--
 Aquí puedes documentar las decisiones técnicas tomadas durante el desarrollo:
 
 ### Base de Datos
-- **SQLite**: Elegido por simplicidad y portabilidad para este proyecto de demostración
-- **better-sqlite3**: Driver de alto rendimiento para Node.js
+- **SQLite**: Elegido por simplicidad y portabilidad para este proyecto de demostración, no tenía mucha experiencia pero era mas flexible porque no necesitamos de un servidor. Me hibiese gustado implementra transacciones y evitar los db locked.
+- **Estructira DB**: Decidí separar las informacion en una tabla "commissions" para poder tener multiples comisiones para un mismo deal, poder agregar mas campos sin afectar a un deal y poder hacer consultas mas eficientes de las comisiones
 
 ### Arquitectura
 - **MVC Pattern**: Separación clara entre rutas, controladores y lógica de negocio
 - **TypeScript**: Tipado estático para mayor robustez del código
+- Decidí crear un script para la carga de los csv porque me pareció lo mas simple y rápido. Lo ideal cargar los CSVs desde el front y analizarlos en el back.
+- También hubiera implementado un endpont para modificar el estado de un deal, cuando se marcara como "completed" calcular la comision correspondiente.
 
 ### Seguridad
 - **Helmet**: Headers de seguridad automáticos
@@ -130,4 +98,3 @@ Aquí puedes documentar las decisiones técnicas tomadas durante el desarrollo:
 ### Escalabilidad
 - **Modular**: Estructura preparada para crecimiento
 - **Environment Variables**: Configuración flexible por entorno
--->
