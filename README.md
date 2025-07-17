@@ -9,7 +9,6 @@ API REST que permite:
 - Importar datos de ventas desde archivos CSV
 - Calcular comisiones para representantes de ventas
 - Consultar información de deals y comisiones
-- Gestionar el estado de las ventas
 
 ## Enlaces a la grabación de pantalla
 https://www.loom.com/share/a094a05f849f4754874af4c6205f73ee?sid=c4469ece-cc18-485c-95c0-86773b91195b
@@ -79,16 +78,14 @@ glofy-deals/
 
 ## 🔧 Decisiones Técnicas
 
-Aquí puedes documentar las decisiones técnicas tomadas durante el desarrollo:
-
 ### Base de Datos
-- **SQLite**: Elegido por simplicidad y portabilidad para este proyecto de demostración, no tenía mucha experiencia pero era mas flexible porque no necesitamos de un servidor. Me hibiese gustado implementra transacciones y evitar los db locked.
+- **SQLite**: Elegido por simplicidad y portabilidad para este proyecto de demostración, no tenía mucha experiencia pero era mas flexible porque no necesitamos de un servidor.
 - **Estructira DB**: Decidí separar las informacion en una tabla "commissions" para poder tener multiples comisiones para un mismo deal, poder agregar mas campos sin afectar a un deal y poder hacer consultas mas eficientes de las comisiones
 
 ### Arquitectura
 - **MVC Pattern**: Separación clara entre rutas, controladores y lógica de negocio
 - **TypeScript**: Tipado estático para mayor robustez del código
-- Decidí crear un script para la carga de los csv porque me pareció lo mas simple y rápido. Lo ideal cargar los CSVs desde el front y analizarlos en el back.
+- Decidí crear un script para la carga de los csv porque me pareció lo mas simple y rápido. Lo ideal es cargar los CSVs desde el front y analizarlos en el back.
 - También hubiera implementado un endpont para modificar el estado de un deal, cuando se marcara como "completed" calcular la comision correspondiente.
 
 ### Seguridad
